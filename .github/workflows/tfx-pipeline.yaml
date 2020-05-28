@@ -22,5 +22,5 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install skaffold
         run: make install-skaffold
-      - name: Update tfx pipeline
-        run: make tfx-update-pipeline
+      - name: Create tfx pipeline
+        run: make tfx-create-pipeline
