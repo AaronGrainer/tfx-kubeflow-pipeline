@@ -1,0 +1,5 @@
+*.gz
+skaffold
+build.yaml
+Dockerfile
+__pycache__
