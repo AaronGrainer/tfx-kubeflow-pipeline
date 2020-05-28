@@ -10,9 +10,11 @@ cachetools==3.1.1
 certifi==2020.4.5.1
 chardet==3.0.4
 click==7.1.2
+cloudpickle==1.4.1
 crcmod==1.7
 decorator==4.4.2
 defusedxml==0.6.0
+Deprecated==1.2.10
 dill==0.3.0
 docker==4.2.0
 docopt==0.6.2
@@ -32,8 +34,9 @@ google-cloud-bigtable==1.0.0
 google-cloud-core==1.3.0
 google-cloud-datastore==1.7.4
 google-cloud-pubsub==1.0.2
+google-cloud-storage==1.28.1
 google-pasta==0.2.0
-google-resumable-media==0.4.1
+google-resumable-media==0.5.0
 googleapis-common-protos==1.51.0
 grpc-google-iam-v1==0.12.3
 grpcio==1.29.0
@@ -56,6 +59,8 @@ jupyter-client==6.1.3
 jupyter-console==6.1.0
 jupyter-core==4.6.3
 Keras-Preprocessing==1.1.2
+kfp==0.5.1
+kfp-server-api==0.5.0
 kubernetes==10.1.0
 Markdown==3.2.2
 MarkupSafe==1.1.1
@@ -97,11 +102,14 @@ qtconsole==4.7.4
 QtPy==1.9.0
 requests==2.23.0
 requests-oauthlib==1.3.0
+requests-toolbelt==0.9.1
 rsa==3.4.2
 scikit-learn==0.21.3
 scipy==1.4.1
 Send2Trash==1.5.0
 six==1.15.0
+strip-hints==0.1.9
+tabulate==0.8.7
 tensorboard==2.2.1
 tensorboard-plugin-wit==1.6.0.post3
 tensorflow==2.2.0
