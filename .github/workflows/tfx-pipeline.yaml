@@ -8,12 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-        with:
-          version: '286.0.0'
-          service_account_email: ${{ secrets.SA_EMAIL }}
-          service_account_key: ${{ secrets.SA_KEY }}
-          project_id: ${{ secrets.PROJECT_ID }}
       - name: Set up Python 3.7
         uses: actions/setup-python@v2
         with:
@@ -22,5 +16,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install skaffold
         run: make install-skaffold
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '286.0.0'
+          service_account_email: ${{ secrets.SA_EMAIL }}
+          service_account_key: ${{ secrets.SA_KEY }}
+          project_id: ${{ secrets.PROJECT_ID }}
       - name: Create tfx pipeline
         run: make tfx-create-pipeline
