@@ -10,3 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run Makefile
         run: make test
+      - name: Test Python
+        run: pip install pytest
