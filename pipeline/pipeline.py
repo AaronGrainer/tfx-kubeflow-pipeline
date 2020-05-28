@@ -44,8 +44,10 @@ def create_pipeline(
     ai_platform_serving_args: Optional[Dict[Text, Any]] = None,
 ) -> pipeline.Pipeline:
 
-  # example_gen = CsvExampleGen(input=external_input(data_path))
-  example_gen = BigQueryExampleGen(query=query)
+  if query:
+    example_gen = BigQueryExampleGen(query=query)
+  else:
+    example_gen = CsvExampleGen(input=external_input(data_path))
 
   statistics_gen = StatisticsGen(examples=example_gen.outputs['examples'])
 
