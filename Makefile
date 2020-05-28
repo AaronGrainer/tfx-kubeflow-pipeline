@@ -58,3 +58,7 @@ tfx-run:
 	tfx run create \
 		--pipeline-name=${PIPELINE_NAME} \
 		--endpoint=${ENDPOINT}
+
+create-service-account-key:
+	gcloud iam service-accounts keys create key.json \
+		--iam-account ${SERVICE_ACCOUNT}@${GCP_PROJECT_ID}.iam.gserviceaccount.com
