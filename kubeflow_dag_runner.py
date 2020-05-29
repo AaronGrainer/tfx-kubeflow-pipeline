@@ -28,8 +28,8 @@ def run():
       eval_args=trainer_pb2.EvalArgs(num_steps=config.EVAL_NUM_STEPS),
       eval_accuracy_threshold=config.EVAL_ACCURACY_THRESHOLD,
       serving_model_dir=pipeline_config.SERVING_MODEL_DIR_GCS,
-      # query=config.BIG_QUERY_QUERY,
-      # beam_pipeline_args=config.BIG_QUERY_WITH_DIRECT_RUNNER_BEAM_PIPELINE_ARGS,
+      query=config.BIG_QUERY_QUERY,
+      beam_pipeline_args=config.BIG_QUERY_WITH_DIRECT_RUNNER_BEAM_PIPELINE_ARGS,
       # beam_pipeline_args=config.DATAFLOW_BEAM_PIPELINE_ARGS,
       # ai_platform_training_args=config.GCP_AI_PLATFORM_TRAINING_ARGS,
       # ai_platform_serving_args=config.GCP_AI_PLATFORM_SERVING_ARGS

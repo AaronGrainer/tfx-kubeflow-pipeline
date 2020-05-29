@@ -61,4 +61,4 @@ tfx-run:
 
 create-service-account-key:
 	gcloud iam service-accounts keys create key.json \
-		--iam-account ${SERVICE_ACCOUNT}@${GCP_PROJECT_ID}.iam.gserviceaccount.com
+		--iam-account ${SERVICE_ACCOUNT_GITHUB}

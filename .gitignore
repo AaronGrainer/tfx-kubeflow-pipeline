@@ -1,8 +1,7 @@
-# *.gz
+*.gz
 skaffold
 build.yaml
 Dockerfile
 __pycache__
 tfx
 key.json
-README.md
