@@ -1,5 +1,7 @@
 # TFX Pipeline
 
+![.github/workflows/tfx-pipeline.yaml](https://github.com/AaronGrainer/tfx-kubeflow-pipeline/workflows/.github/workflows/tfx-pipeline.yaml/badge.svg)
+
 A Tensorflow Extended framework is designed to preprocess raw data from bigquery, trained using deep learning, where the model will be evaluated against previous blessing versions and automatically deployed to a production ready serving platform.
 
 ![](docs/tensorflow-extended.png)
