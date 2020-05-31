@@ -5,3 +5,5 @@ Dockerfile
 __pycache__
 tfx
 key.json
+data/raw
+data/tfrecord

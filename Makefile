@@ -1,7 +1,15 @@
 include .env
 
-test:
-	echo ${CLUSTER_NAME}
+download-coco:
+	mkdir -p data/raw/coco
+	mkdir -p data/tfrecord/coco
+	cd data/raw/coco; wget http://images.cocodataset.org/zips/train2017.zip
+	cd data/raw/coco; wget http://images.cocodataset.org/zips/val2017.zip
+	cd data/raw/coco; wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+
+	cd data/raw/coco; unzip train2017.zip
+	cd data/raw/coco; unzip val2017.zip
+	cd data/raw/coco; unzip annotations_trainval2017.zip
 
 run-local:
 	python -m beam_dag_runner
@@ -52,6 +60,11 @@ tfx-create-pipeline:
 tfx-update-pipeline:
 	tfx pipeline update \
 		--pipeline-path=kubeflow_dag_runner.py \
+		--endpoint=${ENDPOINT}
+
+tfx-delete-pipeline:
+	tfx pipeline delete \
+		--pipeline-name=${PIPELINE_NAME} \
 		--endpoint=${ENDPOINT}
 
 tfx-run:

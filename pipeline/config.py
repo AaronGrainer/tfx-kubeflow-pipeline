@@ -1,6 +1,6 @@
 import os
 
-PIPELINE_NAME = 'tfx_taxi_pipeline_2'
+PIPELINE_NAME = 'tfx_taxi_pipeline'
 
 GCS_BUCKET_NAME = 'hostedkfp-default-jj5sblqpbu'
 
