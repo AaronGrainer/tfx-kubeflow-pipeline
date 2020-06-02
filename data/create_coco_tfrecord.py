@@ -13,7 +13,7 @@ from absl import flags
 from absl import logging
 from pycocotools import mask
 
-from . import dataset_util
+import dataset_util
 
 
 FLAGS = flags.FLAGS

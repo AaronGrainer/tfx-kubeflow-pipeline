@@ -12,7 +12,7 @@ download-coco:
 	cd data/raw/coco; unzip annotations_trainval2017.zip
 
 create-coco-tfrecord:
-	python -m data.create_coco_tfrecord
+	cd data; python -m create_coco_tfrecord
 
 run-local:
 	python -m beam_dag_runner
