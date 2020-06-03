@@ -170,4 +170,40 @@ class YOLACTLoss(object):
     loss_mask /= tf.cast(total_pos, tf.float32)
     return loss_mask
 
+  def _loss_semantic_segmentation(self, pred_seg, mask_gt, classes, num_obj):
+    shape_mask = tf.shape(mask_gt)
+    num_batch = shape_mask[0]
+    seg_shape = tf.shape(pred_seg)[1]
+    loss_seg = 0.
+
+    for idx in tf.range(num_batch):
+      seg = pred_seg[idx]
+      masks = mask_gt[idx]
+      cls = classes[idx]
+      objects = num_obj[idx]
+
+      # Seg shape (69, 69, num_cls)
+      # Resize masks from (100, 138, 138) to (100, 69, 69)
+      masks = tf.expand_dims(masks, axis=-1)
+      masks = tf.image.resize(
+          masks, [seg_shape, seg_shape], method=tf.image.ResizeMethod.BILINEAR)
+      masks = tf.cast(masks + 0.5, tf.int64)
+      masks = tf.squeeze(tf.cast(masks, tf.float32))
+
+      # obj_mask shape (objects, 138, 138)
+      obj_mask = masks[:objects]
+      obj_cls = tf.expand_dims(cls[:objects], axis=-1)
+
+      # Create empty ground truth (138, 138, num_cls)
+      seg_gt = tf.zeros_like(seg)
+      seg_gt = tf.transpose(seg_gt, perm=(2, 0, 1))
+      seg_gt = tf.tensor_scatter_nd_update(
+          seg_gt, indices=obj_cls, updates=obj_mask)
+      seg_gt = tf.transpose(seg_gt, perm=(1, 2, 0))
+      loss_seg += tf.reduce_sum(tf.nn.sigmoid_cross_entropy_with_logits(seg_gt, seg))
+
+    loss_seg = loss_seg / \
+        tf.cast(seg_shape, tf.float32) ** 2 / tf.cast(num_batch, tf.float32)
+
+    return loss_seg
 

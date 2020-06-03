@@ -7,3 +7,4 @@ tfx
 key.json
 data/raw
 data/tfrecord
+models/yolact/train/logs

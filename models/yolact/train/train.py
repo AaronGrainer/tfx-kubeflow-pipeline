@@ -90,7 +90,7 @@ def main(argv):
                         num_mask=32,
                         aspect_ratio=[1, 0.5, 2],
                         scales=[24, 48, 96, 192, 384])
-
+                        
   # Add weight decay
   for layer in model.layers:
     if isinstance(layer, tf.keras.layers.Conv2D) or isinstance(layer, tf.keras.layers.Dense):
@@ -175,7 +175,8 @@ def main(argv):
       logging.info("Iteration {}, LR: {}, Total Loss: {}, B: {},  C: {}, M: {}, S:{} ".format(
         iterations,
         optimizer._decayed_lr(var_dtype=tf.float32),
-        train_loss.result(), loc.result(),
+        train_loss.result(), 
+        loc.result(),
         conf.result(),
         mask.result(),
         seg.result()))
