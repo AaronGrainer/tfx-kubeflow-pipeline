@@ -1,15 +1,15 @@
 import os
 
-PIPELINE_NAME = 'tfx_taxi_pipeline'
+PIPELINE_NAME = 'tfx_yolact_pipeline'
 
 GCS_BUCKET_NAME = 'hostedkfp-default-jj5sblqpbu'
 
 GCP_PROJECT_ID = 'ai-dashboard-backend'
 GCP_REGION = 'us-central1'
 
-PREPROCESSING_FN = 'models.taxi.preprocessing.preprocessing_fn'
-RUN_FN = 'models.taxi.model.run_fn'
-# RUN_FN = 'models.taxi.model_estimator.run_fn'
+PREPROCESSING_FN = 'models.yolact.preprocessing.preprocessing_fn'
+RUN_FN = 'models.yolact.model.run_fn'
+# RUN_FN = 'models.yolact.model_estimator.run_fn'
 
 TRAIN_NUM_STEPS = 100
 EVAL_NUM_STEPS = 100
