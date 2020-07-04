@@ -2,13 +2,13 @@
 
 <p align="center">
   <a>
+    <img alt="Code Progress" src="https://img.shields.io/badge/Code-In%20Progress-yellow">
+  </a>
+  <a>
     <img alt="Github Actions" src="https://github.com/AaronGrainer/tfx-kubeflow-pipeline/workflows/.github/workflows/tfx-pipeline.yaml/badge.svg">
   </a>
   <a href="https://github.com/aarongrainer/tfx-kubeflow-pipeline/blob/master/LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/aarongrainer/tfx-kubeflow-pipeline?color=blue">
-  </a>
-  <a>
-    <img alt="Code Progress" src="https://img.shields.io/badge/Code-In%20Progress-yellow">
   </a>
 </p>
 
