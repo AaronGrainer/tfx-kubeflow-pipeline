@@ -141,7 +141,7 @@ def create_pipeline(
       statistics_gen,
       schema_gen,
       example_validator,
-      # transform,
+      transform,
       # trainer,
       # model_resolver,
       # evaluator,

@@ -39,11 +39,11 @@ def input_fn(file_pattern, tf_transform_output, batch_size=200):
     tf_transform_output.transformed_feature_spec().copy())
 
   dataset = tf.data.experimental.make_batched_features_dataset(
-    file_pattern=file_pattern,
-    batch_size=batch_size,
-    features=transformed_feature_spec,
-    reader=_gzip_reader_fn,
-    label_key=features.transformed_name(features.LABEL_KEY))
+      file_pattern=file_pattern,
+      batch_size=batch_size,
+      features=transformed_feature_spec,
+      reader=_gzip_reader_fn,
+      label_key=features.transformed_name(features.LABEL_KEY))
 
   return dataset
 
