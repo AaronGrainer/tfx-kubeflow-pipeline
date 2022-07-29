@@ -64,7 +64,7 @@ kfp-server-api==0.5.0
 kubernetes==10.1.0
 Markdown==3.2.2
 MarkupSafe==1.1.1
-mistune==0.8.4
+mistune==2.0.3
 ml-metadata==0.21.2
 mock==2.0.0
 monotonic==1.5
